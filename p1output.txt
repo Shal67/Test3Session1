@@ -1,1 +1,56 @@
+ gcc -g p1original.c
+ ./a.out
+Enter the numerator: 
+4
+Enter the denominator: 
+8
+Enter the numerator: 
+2
+Enter the denominator: 
+4
+4/8 + 2/4 = 1/1 
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x910: file p1original.c, line 29.
+(gdb) r
+Starting program: /home/runner/Test3Session1/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1original.c:29
+29  {
+(gdb) n
+31    input(&num1,&den1,&num2,&den2);
+(gdb) n
+Enter the numerator: 
+n
+Enter the denominator: 
+Enter the numerator: 
+Enter the denominator: 
+32    add(num1,den1,num2,den2,&num3,&den3);
+(gdb) n
+33    output(num1,den1,num2,den2,num3,den3);
+(gdb) n
+34    return 0;
+(gdb) n
+35  } 
+(gdb) n
+__libc_start_main (main=0x5564c2000908 <main>, argc=1, argv=0x7fff36dee3f8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fff36dee3e8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) 
